@@ -1,0 +1,26 @@
+{
+  "existing": {
+    "random": {
+      "RANDOM00": {
+        "author": "s14",
+        "quote": "s15"
+      },
+      "RANDOM01": {
+        "author": "s28",
+        "quote": "s29"
+      },
+      "RANDOM02": {
+        "author": "s3c",
+        "quote": "s3d"
+      }
+    }
+  },
+  "new": {
+    "random": {
+      "random_ref01": {
+        "author": "s50",
+        "quote": "s51"
+      }
+    }
+  }
+}

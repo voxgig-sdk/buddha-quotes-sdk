@@ -1,0 +1,26 @@
+{
+  "existing": {
+    "today": {
+      "TODAY00": {
+        "author": "s14",
+        "quote": "s15"
+      },
+      "TODAY01": {
+        "author": "s28",
+        "quote": "s29"
+      },
+      "TODAY02": {
+        "author": "s3c",
+        "quote": "s3d"
+      }
+    }
+  },
+  "new": {
+    "today": {
+      "today_ref01": {
+        "author": "s50",
+        "quote": "s51"
+      }
+    }
+  }
+}

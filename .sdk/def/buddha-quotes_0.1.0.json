@@ -1,0 +1,168 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Buddha Quotes API",
+    "description": "This API provides access to a collection of inspirational quotes from Buddhist figures including Buddha, Dogen, and Thich Nhat Hanh. Users can retrieve random quotes as well as specific quotes for today, making it a resource for daily wisdom and reflection.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://buddha-api.com/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://buddha-api.com/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/random": {
+      "get": {
+        "summary": "Get a random quote",
+        "description": "Returns a random inspirational quote from Buddhist figures",
+        "operationId": "getRandomQuote",
+        "parameters": [
+          {
+            "name": "author",
+            "in": "query",
+            "description": "Filter quotes by author",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Buddha",
+                "Dalai Lama",
+                "Dogen",
+                "Thich Nhat Hanh"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a random quote",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quote"
+                },
+                "examples": {
+                  "buddha": {
+                    "value": {
+                      "quote": "Whatever precious jewel there is in the heavenly worlds, there is nothing comparable to one who is Awakened.",
+                      "author": "Buddha"
+                    }
+                  },
+                  "dogen": {
+                    "value": {
+                      "quote": "But do not ask me where I am going, As I travel in this limitless world, Where every step I take is my home.",
+                      "author": "Dogen"
+                    }
+                  },
+                  "thich": {
+                    "value": {
+                      "quote": "Life is available only in the present moment.",
+                      "author": "Thich Nhat Hanh"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/today": {
+      "get": {
+        "summary": "Get today's quote",
+        "description": "Returns the quote of the day from Buddhist figures",
+        "operationId": "getTodayQuote",
+        "responses": {
+          "200": {
+            "description": "Successful response with today's quote",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Quote"
+                },
+                "examples": {
+                  "today": {
+                    "value": {
+                      "quote": "One moment can change a day, one day can change a life, and one life can change the world.",
+                      "author": "Buddha"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Quote": {
+        "type": "object",
+        "properties": {
+          "quote": {
+            "type": "string",
+            "description": "The text of the inspirational quote"
+          },
+          "author": {
+            "type": "string",
+            "description": "The author of the quote",
+            "enum": [
+              "Buddha",
+              "Dalai Lama",
+              "Dogen",
+              "Thich Nhat Hanh"
+            ]
+          }
+        },
+        "required": [
+          "quote",
+          "author"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error description"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Quotes",
+      "description": "Operations for retrieving Buddhist quotes"
+    }
+  ]
+}
