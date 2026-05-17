@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/buddha-quotes-sdk"
-	"github.com/voxgig-sdk/buddha-quotes-sdk/core"
+	sdk "github.com/voxgig-sdk/buddha-quotes-sdk/go"
+	"github.com/voxgig-sdk/buddha-quotes-sdk/go/core"
 )
 
 func TestRandomDirect(t *testing.T) {

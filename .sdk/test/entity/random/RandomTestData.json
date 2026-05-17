@@ -3,15 +3,18 @@
     "random": {
       "RANDOM00": {
         "author": "s14",
-        "quote": "s15"
+        "quote": "s15",
+        "id": "RANDOM00"
       },
       "RANDOM01": {
         "author": "s28",
-        "quote": "s29"
+        "quote": "s29",
+        "id": "RANDOM01"
       },
       "RANDOM02": {
         "author": "s3c",
-        "quote": "s3d"
+        "quote": "s3d",
+        "id": "RANDOM02"
       }
     }
   },
