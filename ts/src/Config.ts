@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://buddha-api.com/api',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },

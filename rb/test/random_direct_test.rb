@@ -61,14 +61,12 @@ def random_direct_setup(mockres)
   env = Runner.env_override({
     "BUDDHAQUOTES_TEST_RANDOM_ENTID" => {},
     "BUDDHAQUOTES_TEST_LIVE" => "FALSE",
-    "BUDDHAQUOTES_APIKEY" => "NONE",
   })
 
   live = env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["BUDDHAQUOTES_APIKEY"],
     }
     client = BuddhaQuotesSDK.new(merged_opts)
     return {

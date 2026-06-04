@@ -117,7 +117,6 @@ func todayBasicSetup(extra map[string]any) *entityTestSetup {
 		"BUDDHAQUOTES_TEST_TODAY_ENTID": idmap,
 		"BUDDHAQUOTES_TEST_LIVE":      "FALSE",
 		"BUDDHAQUOTES_TEST_EXPLAIN":   "FALSE",
-		"BUDDHAQUOTES_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["BUDDHAQUOTES_TEST_TODAY_ENTID"])
@@ -128,7 +127,6 @@ func todayBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["BUDDHAQUOTES_APIKEY"],
 			},
 			extra,
 		})

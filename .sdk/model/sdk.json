@@ -16,7 +16,16 @@
           }
         ],
         "title": "Buddha Quotes API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Fetch inspirational quotes from Buddha and other Buddhist teachers, random or quote-of-the-day",
+        "homepage": "https://buddha-api.com/",
+        "docs_url": "https://buddha-api.com/",
+        "about_md": "The Buddha Quotes API is a free, open-access service that returns short inspirational quotes attributed to Buddhist figures such as Buddha, Dogen, Thich Nhat Hanh, and the Dalai Lama. It is maintained by an independent developer (contact: buddha.api.service@gmail.com).\n\nWhat you get from the API:\n\n- A random quote on each call to `/api/random`\n- A daily quote via `/api/today`\n- Attribution to the original Buddhist teacher\n\nThe service is publicly accessible and does not document an authentication scheme or published rate limit. It is also listed in the [Free Public APIs catalogue](https://freepublicapis.com/buddha-quotes-api).",
+        "entity_desc": {
+          "random": "A randomly selected quote from the collection, served via `GET /api/random`.",
+          "today": "The quote of the day, served via `GET /api/today`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +33,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "random": {

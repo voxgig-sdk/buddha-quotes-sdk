@@ -91,7 +91,6 @@ function random_basic_setup(extra)
     ["BUDDHAQUOTES_TEST_RANDOM_ENTID"] = idmap,
     ["BUDDHAQUOTES_TEST_LIVE"] = "FALSE",
     ["BUDDHAQUOTES_TEST_EXPLAIN"] = "FALSE",
-    ["BUDDHAQUOTES_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ function random_basic_setup(extra)
   if env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["BUDDHAQUOTES_APIKEY"],
       },
       extra or {},
     })
