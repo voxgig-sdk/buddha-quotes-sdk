@@ -10,7 +10,7 @@ The Python SDK for the BuddhaQuotes API — an entity-oriented client following 
 
 ## Install
 ```bash
-pip install buddha-quotes-sdk
+pip install voxgig-sdk-buddha-quotes
 ```
 
 Or install from source:

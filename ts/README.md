@@ -10,7 +10,7 @@ The TypeScript SDK for the BuddhaQuotes API — a type-safe, entity-oriented cli
 
 ## Install
 ```bash
-npm install buddha-quotes
+npm install @voxgig-sdk/buddha-quotes
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The Lua SDK for the BuddhaQuotes API — an entity-oriented client using Lua con
 
 ## Install
 ```bash
-luarocks install buddha-quotes-sdk
+luarocks install voxgig-sdk-buddha-quotes
 ```
 
 If the module is not yet published, add the source directory to

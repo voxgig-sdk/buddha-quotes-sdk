@@ -10,7 +10,7 @@ The PHP SDK for the BuddhaQuotes API — an entity-oriented client using PHP con
 
 ## Install
 ```bash
-composer require voxgig/buddha-quotes-sdk
+composer require voxgig-sdk/buddha-quotes
 ```
 
 

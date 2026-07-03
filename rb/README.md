@@ -10,13 +10,13 @@ The Ruby SDK for the BuddhaQuotes API — an entity-oriented client using idioma
 
 ## Install
 ```bash
-gem install buddha-quotes-sdk
+gem install voxgig-sdk-buddha-quotes
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "buddha-quotes-sdk"
+gem "voxgig-sdk-buddha-quotes"
 ```
 
 Then run:
