@@ -15,6 +15,9 @@ def make_config():
         },
         "options": {
             "base": "https://buddha-api.com/api",
+            "auth": {
+                "prefix": "Bearer",
+            },
             "headers": {
         "content-type": "application/json",
       },
@@ -27,35 +30,37 @@ def make_config():
       "random": {
         "fields": [
           {
+            "active": True,
             "name": "author",
             "req": True,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "quote",
             "req": True,
             "type": "`$STRING`",
-            "active": True,
             "index$": 1,
           },
         ],
         "name": "random",
         "op": {
           "load": {
+            "input": "data",
             "name": "load",
             "points": [
               {
+                "active": True,
                 "args": {
                   "query": [
                     {
+                      "active": True,
                       "kind": "query",
                       "name": "author",
                       "orig": "author",
                       "reqd": False,
                       "type": "`$STRING`",
-                      "active": True,
                     },
                   ],
                 },
@@ -73,11 +78,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "load",
           },
         },
@@ -88,42 +91,42 @@ def make_config():
       "today": {
         "fields": [
           {
+            "active": True,
             "name": "author",
             "req": True,
             "type": "`$STRING`",
-            "active": True,
             "index$": 0,
           },
           {
+            "active": True,
             "name": "quote",
             "req": True,
             "type": "`$STRING`",
-            "active": True,
             "index$": 1,
           },
         ],
         "name": "today",
         "op": {
           "load": {
+            "input": "data",
             "name": "load",
             "points": [
               {
+                "active": True,
+                "args": {},
                 "method": "GET",
                 "orig": "/today",
                 "parts": [
                   "today",
                 ],
+                "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "active": True,
-                "args": {},
-                "select": {},
                 "index$": 0,
               },
             ],
-            "input": "data",
             "key$": "load",
           },
         },

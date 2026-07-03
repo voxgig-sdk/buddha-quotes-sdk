@@ -99,12 +99,14 @@ func todayDirectSetup(mockres any) *todayDirectSetupResult {
 	env := envOverride(map[string]any{
 		"BUDDHAQUOTES_TEST_TODAY_ENTID": map[string]any{},
 		"BUDDHAQUOTES_TEST_LIVE":    "FALSE",
+		"BUDDHAQUOTES_APIKEY":       "NONE",
 	})
 
 	live := env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["BUDDHAQUOTES_APIKEY"],
 		}
 		client := sdk.NewBuddhaQuotesSDK(mergedOpts)
 

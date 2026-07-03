@@ -14,6 +14,9 @@ local function make_config()
     },
     options = {
       base = "https://buddha-api.com/api",
+      auth = {
+        prefix = "Bearer",
+      },
       headers = {
         ["content-type"] = "application/json",
       },
@@ -26,35 +29,37 @@ local function make_config()
       ["random"] = {
         ["fields"] = {
           {
+            ["active"] = true,
             ["name"] = "author",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 0,
           },
           {
+            ["active"] = true,
             ["name"] = "quote",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 1,
           },
         },
         ["name"] = "random",
         ["op"] = {
           ["load"] = {
+            ["input"] = "data",
             ["name"] = "load",
             ["points"] = {
               {
+                ["active"] = true,
                 ["args"] = {
                   ["query"] = {
                     {
+                      ["active"] = true,
                       ["kind"] = "query",
                       ["name"] = "author",
                       ["orig"] = "author",
                       ["reqd"] = false,
                       ["type"] = "`$STRING`",
-                      ["active"] = true,
                     },
                   },
                 },
@@ -72,11 +77,9 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["active"] = true,
                 ["index$"] = 0,
               },
             },
-            ["input"] = "data",
             ["key$"] = "load",
           },
         },
@@ -87,42 +90,42 @@ local function make_config()
       ["today"] = {
         ["fields"] = {
           {
+            ["active"] = true,
             ["name"] = "author",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 0,
           },
           {
+            ["active"] = true,
             ["name"] = "quote",
             ["req"] = true,
             ["type"] = "`$STRING`",
-            ["active"] = true,
             ["index$"] = 1,
           },
         },
         ["name"] = "today",
         ["op"] = {
           ["load"] = {
+            ["input"] = "data",
             ["name"] = "load",
             ["points"] = {
               {
+                ["active"] = true,
+                ["args"] = {},
                 ["method"] = "GET",
                 ["orig"] = "/today",
                 ["parts"] = {
                   "today",
                 },
+                ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["active"] = true,
-                ["args"] = {},
-                ["select"] = {},
                 ["index$"] = 0,
               },
             },
-            ["input"] = "data",
             ["key$"] = "load",
           },
         },

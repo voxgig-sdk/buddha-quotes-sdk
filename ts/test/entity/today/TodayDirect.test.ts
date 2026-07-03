@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'BUDDHAQUOTES_TEST_TODAY_ENTID': {},
     'BUDDHAQUOTES_TEST_LIVE': 'FALSE',
+    'BUDDHAQUOTES_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.BUDDHAQUOTES_TEST_LIVE
 
   if (live) {
     const client = new BuddhaQuotesSDK({
+      apikey: env.BUDDHAQUOTES_APIKEY,
     })
 
     let idmap: any = env['BUDDHAQUOTES_TEST_TODAY_ENTID']

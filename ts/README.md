@@ -1,6 +1,11 @@
 # BuddhaQuotes TypeScript SDK
 
-The TypeScript SDK for the BuddhaQuotes API. Provides a type-safe, entity-oriented interface with full async/await support.
+
+
+The TypeScript SDK for the BuddhaQuotes API — a type-safe, entity-oriented client with full async/await support.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -17,7 +22,9 @@ loading a specific record.
 ```ts
 import { BuddhaQuotesSDK } from 'buddha-quotes'
 
-const client = new BuddhaQuotesSDK({})
+const client = new BuddhaQuotesSDK({
+  apikey: process.env.BUDDHA-QUOTES_APIKEY,
+})
 ```
 
 ### 3. Load a random
@@ -80,7 +87,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new BuddhaQuotesSDK()
+const client = new BuddhaQuotesSDK({ apikey: '...' })
 const testClient = client.tester()
 ```
 
@@ -116,6 +123,7 @@ const logger = {
 }
 
 const client = new BuddhaQuotesSDK({
+  apikey: '...',
   extend: [logger],
 })
 ```
@@ -126,6 +134,7 @@ Create a `.env.local` file at the project root:
 
 ```
 BUDDHA-QUOTES_TEST_LIVE=TRUE
+BUDDHA-QUOTES_APIKEY=<your-key>
 ```
 
 Then run:
@@ -143,6 +152,7 @@ cd ts && npm test
 
 ```ts
 new BuddhaQuotesSDK(options?: {
+  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -153,6 +163,7 @@ new BuddhaQuotesSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |

@@ -82,6 +82,7 @@ def today_basic_setup(extra)
     "BUDDHAQUOTES_TEST_TODAY_ENTID" => idmap,
     "BUDDHAQUOTES_TEST_LIVE" => "FALSE",
     "BUDDHAQUOTES_TEST_EXPLAIN" => "FALSE",
+    "BUDDHAQUOTES_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -93,6 +94,7 @@ def today_basic_setup(extra)
   if env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
+        "apikey" => env["BUDDHAQUOTES_APIKEY"],
       },
       extra || {},
     ])

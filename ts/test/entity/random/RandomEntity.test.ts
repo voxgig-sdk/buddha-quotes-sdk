@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'BUDDHA_QUOTES_TEST_RANDOM_ENTID': idmap,
     'BUDDHA_QUOTES_TEST_LIVE': 'FALSE',
     'BUDDHA_QUOTES_TEST_EXPLAIN': 'FALSE',
+    'BUDDHA_QUOTES_APIKEY': 'NONE',
   })
 
   idmap = env['BUDDHA_QUOTES_TEST_RANDOM_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new BuddhaQuotesSDK(merge([
       {
+        apikey: env.BUDDHA_QUOTES_APIKEY,
       },
       extra
     ]))

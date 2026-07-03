@@ -62,12 +62,14 @@ function today_direct_setup(mockres)
   local env = runner.env_override({
     ["BUDDHAQUOTES_TEST_TODAY_ENTID"] = {},
     ["BUDDHAQUOTES_TEST_LIVE"] = "FALSE",
+    ["BUDDHAQUOTES_APIKEY"] = "NONE",
   })
 
   local live = env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["BUDDHAQUOTES_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

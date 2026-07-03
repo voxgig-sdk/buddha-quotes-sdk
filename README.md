@@ -1,20 +1,8 @@
 # BuddhaQuotes SDK
 
-Fetch inspirational quotes from Buddha and other Buddhist teachers, random or quote-of-the-day
+Buddha Quotes API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Buddha Quotes API
-
-The Buddha Quotes API is a free, open-access service that returns short inspirational quotes attributed to Buddhist figures such as Buddha, Dogen, Thich Nhat Hanh, and the Dalai Lama. It is maintained by an independent developer (contact: buddha.api.service@gmail.com).
-
-What you get from the API:
-
-- A random quote on each call to `/api/random`
-- A daily quote via `/api/today`
-- Attribution to the original Buddhist teacher
-
-The service is publicly accessible and does not document an authentication scheme or published rate limit. It is also listed in the [Free Public APIs catalogue](https://freepublicapis.com/buddha-quotes-api).
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install buddha-quotes-sdk
 luarocks install buddha-quotes-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { BuddhaQuotesSDK } from 'buddha-quotes'
 
-const client = new BuddhaQuotesSDK({})
+const client = new BuddhaQuotesSDK({
+  apikey: process.env.BUDDHA-QUOTES_APIKEY,
+})
 
+// Load random data
+const random = await client.Random().load({})
+console.log(random.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Random** | A randomly selected quote from the collection, served via `GET /api/random`. | `/random` |
-| **Today** | The quote of the day, served via `GET /api/today`. | `/today` |
+| **Random** |  | `/random` |
+| **Today** |  | `/today` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -109,15 +101,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from buddhaquotes_sdk import BuddhaQuotesSDK
 
-client = BuddhaQuotesSDK({})
+client = BuddhaQuotesSDK({
+    "apikey": os.environ.get("BUDDHA-QUOTES_APIKEY"),
+})
 
 
 # Load a specific random
-random, err = client.Random(None).load(
-    {"id": "example_id"}, None
-)
+random, err = client.Random().load({"id": "example_id"})
+print(random)
 ```
 
 ### PHP
@@ -126,13 +120,14 @@ random, err = client.Random(None).load(
 <?php
 require_once 'buddhaquotes_sdk.php';
 
-$client = new BuddhaQuotesSDK([]);
+$client = new BuddhaQuotesSDK([
+    "apikey" => getenv("BUDDHA-QUOTES_APIKEY"),
+]);
 
 
 // Load a specific random
-[$random, $err] = $client->Random(null)->load(
-    ["id" => "example_id"], null
-);
+[$random, $err] = $client->Random()->load(["id" => "example_id"]);
+print_r($random);
 ```
 
 ### Golang
@@ -140,8 +135,13 @@ $client = new BuddhaQuotesSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/buddha-quotes-sdk/go"
 
-client := sdk.NewBuddhaQuotesSDK(map[string]any{})
+client := sdk.NewBuddhaQuotesSDK(map[string]any{
+    "apikey": os.Getenv("BUDDHA-QUOTES_APIKEY"),
+})
 
+// Load random data
+random, err := client.Random(nil).Load(map[string]any{}, nil)
+fmt.Println(random)
 ```
 
 ### Ruby
@@ -149,13 +149,14 @@ client := sdk.NewBuddhaQuotesSDK(map[string]any{})
 ```ruby
 require_relative "BuddhaQuotes_sdk"
 
-client = BuddhaQuotesSDK.new({})
+client = BuddhaQuotesSDK.new({
+  "apikey" => ENV["BUDDHA-QUOTES_APIKEY"],
+})
 
 
 # Load a specific random
-random, err = client.Random(nil).load(
-  { "id" => "example_id" }, nil
-)
+random, err = client.Random().load({ "id" => "example_id" })
+puts random
 ```
 
 ### Lua
@@ -163,13 +164,14 @@ random, err = client.Random(nil).load(
 ```lua
 local sdk = require("buddha-quotes_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("BUDDHA-QUOTES_APIKEY"),
+})
 
 
 -- Load a specific random
-local random, err = client:Random(nil):load(
-  { id = "example_id" }, nil
-)
+local random, err = client:Random():load({ id = "example_id" })
+print(random)
 ```
 
 ## Unit testing in offline mode
@@ -188,25 +190,21 @@ const result = await client.Random().load({ id: 'test01' })
 ### Python
 
 ```python
-client = BuddhaQuotesSDK.test(None, None)
-result, err = client.Random(None).load(
-    {"id": "test01"}, None
-)
+client = BuddhaQuotesSDK.test()
+result, err = client.Random().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = BuddhaQuotesSDK::test(null, null);
-[$result, $err] = $client->Random(null)->load(
-    ["id" => "test01"], null
-);
+$client = BuddhaQuotesSDK::test();
+[$result, $err] = $client->Random()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Random(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -215,19 +213,15 @@ result, err := client.Random(nil).Load(
 ### Ruby
 
 ```ruby
-client = BuddhaQuotesSDK.test(nil, nil)
-result, err = client.Random(nil).load(
-  { "id" => "test01" }, nil
-)
+client = BuddhaQuotesSDK.test
+result, err = client.Random().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Random(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Random():load({ id = "test01" })
 ```
 
 ## How it works
@@ -331,10 +325,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Buddha Quotes API
-
-- Upstream: [https://buddha-api.com/](https://buddha-api.com/)
 
 ---
 

@@ -59,12 +59,14 @@ def _today_direct_setup(mockres):
     env = runner.env_override({
         "BUDDHAQUOTES_TEST_TODAY_ENTID": {},
         "BUDDHAQUOTES_TEST_LIVE": "FALSE",
+        "BUDDHAQUOTES_APIKEY": "NONE",
     })
 
     live = env.get("BUDDHAQUOTES_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("BUDDHAQUOTES_APIKEY"),
         }
         client = BuddhaQuotesSDK(merged_opts)
         return {
