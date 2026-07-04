@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## RandomEntity
 
 ```python
-random = client.random
+random = client.Random()
 ```
 
 ### Fields
@@ -101,7 +101,7 @@ random = client.random
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.random.load({"id": "random_id"})
+result = client.Random().load({"id": "random_id"})
 ```
 
 ### Common Methods
@@ -136,7 +136,7 @@ Return the entity name.
 ## TodayEntity
 
 ```python
-today = client.today
+today = client.Today()
 ```
 
 ### Fields
@@ -153,7 +153,7 @@ today = client.today
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.today.load({"id": "today_id"})
+result = client.Today().load({"id": "today_id"})
 ```
 
 ### Common Methods

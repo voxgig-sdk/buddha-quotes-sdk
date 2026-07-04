@@ -33,9 +33,10 @@ $client = new BuddhaQuotesSDK();
 
 ```php
 try {
-    $result = $client->random()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Random record (throws on error).
+    $random = $client->Random()->load(["id" => "example_id"]);
+    print_r($random);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = BuddhaQuotesSDK::test();
+$client = BuddhaQuotesSDK::test([
+    "entity" => ["random" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->random()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$random = $client->Random()->load(["id" => "test01"]);
+print_r($random);
 ```
 
 ### Use a custom fetch function
@@ -236,7 +241,7 @@ API path: `/today`
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `$random = $client->Random();`
 
 #### Operations
 
@@ -253,14 +258,15 @@ Create an instance: `const random = client.random`
 
 #### Example: Load
 
-```ts
-const random = await client.random.load({ id: 'random_id' })
+```php
+// load() returns the bare Random record (throws on error).
+$random = $client->Random()->load(["id" => "random_id"]);
 ```
 
 
 ### Today
 
-Create an instance: `const today = client.today`
+Create an instance: `$today = $client->Today();`
 
 #### Operations
 
@@ -277,8 +283,9 @@ Create an instance: `const today = client.today`
 
 #### Example: Load
 
-```ts
-const today = await client.today.load({ id: 'today_id' })
+```php
+// load() returns the bare Today record (throws on error).
+$today = $client->Today()->load(["id" => "today_id"]);
 ```
 
 
@@ -353,7 +360,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$random = $client->random();
+$random = $client->Random();
 $random->load(["id" => "example_id"]);
 
 // $random->dataGet() now returns the loaded random data

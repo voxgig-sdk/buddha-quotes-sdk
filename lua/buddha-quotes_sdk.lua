@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:random():list() / client:random():load({ id = ... })
-function BuddhaQuotesSDK:random(data)
+-- Idiomatic facade: client:Random():list() / client:Random():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function BuddhaQuotesSDK:Random(data)
   local EntityMod = require("entity.random_entity")
   if data == nil then
     if self._random == nil then
@@ -256,15 +257,10 @@ function BuddhaQuotesSDK:random(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:random() instead.
-function BuddhaQuotesSDK:Random(data)
-  local EntityMod = require("entity.random_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:today():list() / client:today():load({ id = ... })
-function BuddhaQuotesSDK:today(data)
+-- Idiomatic facade: client:Today():list() / client:Today():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function BuddhaQuotesSDK:Today(data)
   local EntityMod = require("entity.today_entity")
   if data == nil then
     if self._today == nil then
@@ -272,12 +268,6 @@ function BuddhaQuotesSDK:today(data)
     end
     return self._today
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:today() instead.
-function BuddhaQuotesSDK:Today(data)
-  local EntityMod = require("entity.today_entity")
   return EntityMod.new(self, data)
 end
 
