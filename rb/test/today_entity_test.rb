@@ -42,8 +42,7 @@ class TodayEntityTest < Minitest::Test
     # LOAD
     today_ref01_ent = client.Today(nil)
     today_ref01_match_dt0 = {}
-    today_ref01_data_dt0_loaded, err = today_ref01_ent.load(today_ref01_match_dt0, nil)
-    assert_nil err
+    today_ref01_data_dt0_loaded = today_ref01_ent.load(today_ref01_match_dt0, nil)
     assert !today_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def today_basic_setup(extra)
     "BUDDHAQUOTES_TEST_TODAY_ENTID" => idmap,
     "BUDDHAQUOTES_TEST_LIVE" => "FALSE",
     "BUDDHAQUOTES_TEST_EXPLAIN" => "FALSE",
-    "BUDDHAQUOTES_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def today_basic_setup(extra)
   if env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["BUDDHAQUOTES_APIKEY"],
       },
       extra || {},
     ])

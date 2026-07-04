@@ -49,8 +49,7 @@ class RandomEntityTest extends TestCase
         // LOAD
         $random_ref01_ent = $client->Random(null);
         $random_ref01_match_dt0 = [];
-        [$random_ref01_data_dt0_loaded, $err] = $random_ref01_ent->load($random_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $random_ref01_data_dt0_loaded = $random_ref01_ent->load($random_ref01_match_dt0, null);
         $this->assertNotNull($random_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function random_basic_setup($extra)
         "BUDDHAQUOTES_TEST_RANDOM_ENTID" => $idmap,
         "BUDDHAQUOTES_TEST_LIVE" => "FALSE",
         "BUDDHAQUOTES_TEST_EXPLAIN" => "FALSE",
-        "BUDDHAQUOTES_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function random_basic_setup($extra)
     if ($env["BUDDHAQUOTES_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["BUDDHAQUOTES_APIKEY"],
             ],
             $extra ?? [],
         ]);

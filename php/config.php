@@ -20,9 +20,6 @@ class BuddhaQuotesConfig
             ],
             "options" => [
                 "base" => "https://buddha-api.com/api",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

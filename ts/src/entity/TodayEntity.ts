@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Today,
+  TodayLoadMatch,
+} from '../BuddhaQuotesTypes'
 
 // TODO: needs Entity superclass
-class TodayEntity extends BuddhaQuotesEntityBase {
+class TodayEntity extends BuddhaQuotesEntityBase<Today> {
 
   constructor(client: BuddhaQuotesSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class TodayEntity extends BuddhaQuotesEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: TodayLoadMatch, ctrl?: Control): Promise<Today> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class TodayEntity extends BuddhaQuotesEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Today> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

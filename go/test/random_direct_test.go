@@ -99,14 +99,12 @@ func randomDirectSetup(mockres any) *randomDirectSetupResult {
 	env := envOverride(map[string]any{
 		"BUDDHAQUOTES_TEST_RANDOM_ENTID": map[string]any{},
 		"BUDDHAQUOTES_TEST_LIVE":    "FALSE",
-		"BUDDHAQUOTES_APIKEY":       "NONE",
 	})
 
 	live := env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["BUDDHAQUOTES_APIKEY"],
 		}
 		client := sdk.NewBuddhaQuotesSDK(mergedOpts)
 

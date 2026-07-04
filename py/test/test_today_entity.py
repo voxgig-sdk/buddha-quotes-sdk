@@ -49,8 +49,7 @@ class TestTodayEntity:
         # LOAD
         today_ref01_ent = client.Today(None)
         today_ref01_match_dt0 = {}
-        today_ref01_data_dt0_loaded, err = today_ref01_ent.load(today_ref01_match_dt0, None)
-        assert err is None
+        today_ref01_data_dt0_loaded = today_ref01_ent.load(today_ref01_match_dt0, None)
         assert today_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _today_basic_setup(extra):
         "BUDDHAQUOTES_TEST_TODAY_ENTID": idmap,
         "BUDDHAQUOTES_TEST_LIVE": "FALSE",
         "BUDDHAQUOTES_TEST_EXPLAIN": "FALSE",
-        "BUDDHAQUOTES_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _today_basic_setup(extra):
     if env.get("BUDDHAQUOTES_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("BUDDHAQUOTES_APIKEY"),
             },
             extra or {},
         ])
