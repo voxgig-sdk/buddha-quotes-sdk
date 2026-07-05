@@ -8,7 +8,7 @@ Complete API reference for the BuddhaQuotes Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'buddha-quotes_sdk'
+require_relative 'BuddhaQuotes_sdk'
 
 client = BuddhaQuotesSDK.new(options)
 ```
@@ -97,8 +97,8 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `String` | Yes |  |
+| `quote` | `String` | Yes |  |
 
 ### Operations
 
@@ -107,7 +107,7 @@ random = client.Random
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Random.load({ "id" => "random_id" })
+result = client.Random.load()
 ```
 
 ### Common Methods
@@ -150,8 +150,8 @@ today = client.Today
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `String` | Yes |  |
+| `quote` | `String` | Yes |  |
 
 ### Operations
 
@@ -160,7 +160,7 @@ today = client.Today
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Today.load({ "id" => "today_id" })
+result = client.Today.load()
 ```
 
 ### Common Methods

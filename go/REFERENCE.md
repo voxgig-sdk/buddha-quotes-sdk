@@ -101,8 +101,8 @@ random := client.Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -111,7 +111,7 @@ random := client.Random(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Random(nil).Load(map[string]any{"id": "random_id"}, nil)
+result, err := client.Random(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -148,8 +148,8 @@ today := client.Today(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -158,7 +158,7 @@ today := client.Today(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Today(nil).Load(map[string]any{"id": "today_id"}, nil)
+result, err := client.Today(nil).Load(nil, nil)
 ```
 
 ### Common Methods

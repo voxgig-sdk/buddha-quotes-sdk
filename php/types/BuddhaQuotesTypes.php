@@ -19,7 +19,7 @@ class Random
     public string $quote;
 }
 
-/** Match filter for Random#load (any subset of Random fields). */
+/** Request payload for Random#load. */
 class RandomLoadMatch
 {
     public ?string $author = null;
@@ -33,7 +33,7 @@ class Today
     public string $quote;
 }
 
-/** Match filter for Today#load (any subset of Today fields). */
+/** Request payload for Today#load. */
 class TodayLoadMatch
 {
     public ?string $author = null;

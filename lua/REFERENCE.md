@@ -94,8 +94,8 @@ local random = client:Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -104,7 +104,7 @@ local random = client:Random(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Random():load({ id = "random_id" })
+local result, err = client:Random():load()
 ```
 
 ### Common Methods
@@ -147,8 +147,8 @@ local today = client:Today(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -157,7 +157,7 @@ local today = client:Today(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Today():load({ id = "today_id" })
+local result, err = client:Today():load()
 ```
 
 ### Common Methods

@@ -14,8 +14,7 @@ type Random struct {
 	Quote string `json:"quote"`
 }
 
-// RandomLoadMatch mirrors the random fields as an all-optional match
-// filter (Go analog of Partial<Random>).
+// RandomLoadMatch is the typed request payload for Random.LoadTyped.
 type RandomLoadMatch struct {
 	Author *string `json:"author,omitempty"`
 	Quote *string `json:"quote,omitempty"`
@@ -27,8 +26,7 @@ type Today struct {
 	Quote string `json:"quote"`
 }
 
-// TodayLoadMatch mirrors the today fields as an all-optional match
-// filter (Go analog of Partial<Today>).
+// TodayLoadMatch is the typed request payload for Today.LoadTyped.
 type TodayLoadMatch struct {
 	Author *string `json:"author,omitempty"`
 	Quote *string `json:"quote,omitempty"`

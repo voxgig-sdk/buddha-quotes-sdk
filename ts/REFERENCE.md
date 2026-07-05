@@ -128,8 +128,8 @@ const random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -138,7 +138,7 @@ const random = client.Random()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Random().load({ id: 'random_id' })
+const result = await client.Random().load()
 ```
 
 ### Common Methods
@@ -179,8 +179,8 @@ const today = client.Today()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -189,7 +189,7 @@ const today = client.Today()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Today().load({ id: 'today_id' })
+const result = await client.Today().load()
 ```
 
 ### Common Methods

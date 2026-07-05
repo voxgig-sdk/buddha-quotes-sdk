@@ -8,7 +8,7 @@ Complete API reference for the BuddhaQuotes Python SDK.
 ### Constructor
 
 ```python
-from buddha-quotes_sdk import BuddhaQuotesSDK
+from buddhaquotes_sdk import BuddhaQuotesSDK
 
 client = BuddhaQuotesSDK(options)
 ```
@@ -91,8 +91,8 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `str` | Yes |  |
+| `quote` | `str` | Yes |  |
 
 ### Operations
 
@@ -101,7 +101,7 @@ random = client.Random()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Random().load({"id": "random_id"})
+result = client.Random().load()
 ```
 
 ### Common Methods
@@ -143,8 +143,8 @@ today = client.Today()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `str` | Yes |  |
+| `quote` | `str` | Yes |  |
 
 ### Operations
 
@@ -153,7 +153,7 @@ today = client.Today()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Today().load({"id": "today_id"})
+result = client.Today().load()
 ```
 
 ### Common Methods

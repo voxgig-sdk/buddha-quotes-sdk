@@ -10,12 +10,18 @@ export interface Random {
   quote: string
 }
 
-export type RandomLoadMatch = Partial<Random>
+export interface RandomLoadMatch {
+  author?: string
+  quote?: string
+}
 
 export interface Today {
   author: string
   quote: string
 }
 
-export type TodayLoadMatch = Partial<Today>
+export interface TodayLoadMatch {
+  author?: string
+  quote?: string
+}
 

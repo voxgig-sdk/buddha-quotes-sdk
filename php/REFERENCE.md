@@ -8,7 +8,7 @@ Complete API reference for the BuddhaQuotes PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/buddha-quotes_sdk.php';
+require_once __DIR__ . '/buddhaquotes_sdk.php';
 
 $client = new BuddhaQuotesSDK($options);
 ```
@@ -49,11 +49,11 @@ Create a new `RandomEntity` instance. Pass `null` for no initial data.
 
 Create a new `TodayEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): BuddhaQuotesUtility`
 
 Return a copy of the SDK utility object.
 
@@ -96,8 +96,8 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -106,24 +106,24 @@ $random = $client->Random();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Random()->load(["id" => "random_id"]);
+$result = $client->Random()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -132,7 +132,7 @@ Set the entity match criteria.
 Create a new `RandomEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -149,8 +149,8 @@ $today = $client->Today();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | ``$STRING`` | Yes |  |
-| `quote` | ``$STRING`` | Yes |  |
+| `author` | `string` | Yes |  |
+| `quote` | `string` | Yes |  |
 
 ### Operations
 
@@ -159,24 +159,24 @@ $today = $client->Today();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Today()->load(["id" => "today_id"]);
+$result = $client->Today()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -185,7 +185,7 @@ Set the entity match criteria.
 Create a new `TodayEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

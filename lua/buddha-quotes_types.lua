@@ -11,12 +11,16 @@
 ---@field quote string
 
 ---@class RandomLoadMatch
+---@field author? string
+---@field quote? string
 
 ---@class Today
 ---@field author string
 ---@field quote string
 
 ---@class TodayLoadMatch
+---@field author? string
+---@field quote? string
 
 local M = {}
 
