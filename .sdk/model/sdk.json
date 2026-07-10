@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -291,14 +288,17 @@
           "url": "https://buddha-api.com/"
         },
         "description": "This API provides access to a collection of inspirational quotes from Buddhist figures including Buddha, Dogen, and Thich Nhat Hanh. Users can retrieve random quotes as well as specific quotes for today, making it a resource for daily wisdom and reflection.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://buddha-api.com/api"
           }
         ],
+        "summary": "This API provides access to a collection of inspirational quotes from Buddhist figures including Buddha, Dogen, and Thich Nhat Hanh.",
         "title": "Buddha Quotes API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://buddha-api.com"
       },
       "option": {},
       "target": {
@@ -351,6 +351,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -401,6 +404,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

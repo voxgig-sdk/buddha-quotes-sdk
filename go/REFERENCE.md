@@ -95,6 +95,7 @@ same parameters as `Direct()`.
 
 ```go
 random := client.Random(nil)
+fmt.Println(random.GetName()) // "random"
 ```
 
 ### Fields
@@ -112,6 +113,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Random(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -142,6 +147,7 @@ Return the entity name.
 
 ```go
 today := client.Today(nil)
+fmt.Println(today.GetName()) // "today"
 ```
 
 ### Fields
@@ -159,6 +165,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Today(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

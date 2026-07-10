@@ -15,9 +15,9 @@ main: {
           url: "https://buddha-api.com/api"
         }
       ]
+      summary: "This API provides access to a collection of inspirational quotes from Buddhist figures including Buddha, Dogen, and Thich Nhat Hanh."
       title: "Buddha Quotes API"
       version: "1.0.0"
+      website: "https://buddha-api.com"
     }
   }
-}
-
