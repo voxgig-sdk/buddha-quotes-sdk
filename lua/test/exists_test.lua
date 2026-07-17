@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- BuddhaQuotes SDK exists test
 
 local sdk = require("buddha-quotes_sdk")
 
