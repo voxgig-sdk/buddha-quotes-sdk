@@ -60,11 +60,11 @@ function today_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["BUDDHAQUOTES_TEST_TODAY_ENTID"] = {},
-    ["BUDDHAQUOTES_TEST_LIVE"] = "FALSE",
+    ["BUDDHA_QUOTES_TEST_TODAY_ENTID"] = {},
+    ["BUDDHA_QUOTES_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["BUDDHAQUOTES_TEST_LIVE"] == "TRUE"
+  local live = env["BUDDHA_QUOTES_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

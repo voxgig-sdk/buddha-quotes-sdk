@@ -19,11 +19,15 @@ import {
 describe('RandomDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BUDDHAQUOTES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BUDDHAQUOTES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BUDDHA_QUOTES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BUDDHA_QUOTES_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new BuddhaQuotesSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -72,17 +76,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'BUDDHAQUOTES_TEST_RANDOM_ENTID': {},
-    'BUDDHAQUOTES_TEST_LIVE': 'FALSE',
+    'BUDDHA_QUOTES_TEST_RANDOM_ENTID': {},
+    'BUDDHA_QUOTES_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.BUDDHAQUOTES_TEST_LIVE
+  const live = 'TRUE' === env.BUDDHA_QUOTES_TEST_LIVE
 
   if (live) {
     const client = new BuddhaQuotesSDK({
     })
 
-    let idmap: any = env['BUDDHAQUOTES_TEST_RANDOM_ENTID']
+    let idmap: any = env['BUDDHA_QUOTES_TEST_RANDOM_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

@@ -43,8 +43,8 @@ class BuddhaQuotesTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('BUDDHAQUOTES_TEST_LIVE');
-        $override = self::getenv('BUDDHAQUOTES_TEST_OVERRIDE');
+        $live = self::getenv('BUDDHA_QUOTES_TEST_LIVE');
+        $override = self::getenv('BUDDHA_QUOTES_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class BuddhaQuotesTestRunner
             }
         }
 
-        $explain = self::getenv('BUDDHAQUOTES_TEST_EXPLAIN');
+        $explain = self::getenv('BUDDHA_QUOTES_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['BUDDHAQUOTES_TEST_EXPLAIN'] = $explain;
+            $m['BUDDHA_QUOTES_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

@@ -65,11 +65,11 @@ function random_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "BUDDHAQUOTES_TEST_RANDOM_ENTID" => [],
-        "BUDDHAQUOTES_TEST_LIVE" => "FALSE",
+        "BUDDHA_QUOTES_TEST_RANDOM_ENTID" => [],
+        "BUDDHA_QUOTES_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["BUDDHAQUOTES_TEST_LIVE"] === "TRUE";
+    $live = $env["BUDDHA_QUOTES_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

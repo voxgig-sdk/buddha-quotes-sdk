@@ -66,6 +66,7 @@ class BuddhaQuotesConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
                   'parts' => [
@@ -116,6 +117,7 @@ class BuddhaQuotesConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/today',
                   'parts' => [

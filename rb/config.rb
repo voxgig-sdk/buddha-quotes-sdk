@@ -61,6 +61,7 @@ module BuddhaQuotesConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
                   "parts" => [
@@ -111,6 +112,7 @@ module BuddhaQuotesConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/today",
                   "parts" => [

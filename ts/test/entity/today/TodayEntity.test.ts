@@ -26,8 +26,8 @@ import {
 describe('TodayEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when BUDDHAQUOTES_TEST_LIVE=TRUE.
-  afterEach(liveDelay('BUDDHAQUOTES_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when BUDDHA_QUOTES_TEST_LIVE=TRUE.
+  afterEach(liveDelay('BUDDHA_QUOTES_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = BuddhaQuotesSDK.test()
@@ -62,7 +62,7 @@ describe('TodayEntity', async () => {
     // LOAD
     const today_ref01_ent = client.Today()
     const today_ref01_match_dt0: any = {}
-    const today_ref01_data_dt0 = await today_ref01_ent.load(today_ref01_match_dt0)
+    const today_ref01_data_dt0 = (await today_ref01_ent.load(today_ref01_match_dt0)).data()
     assert(null != today_ref01_data_dt0)
 
 

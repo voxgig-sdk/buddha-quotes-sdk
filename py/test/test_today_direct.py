@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from buddhaquotes_sdk.utility.voxgig_struct import voxgig_struct as vs
 from buddhaquotes_sdk import BuddhaQuotesSDK
-from core import helpers
+from buddhaquotes_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _today_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "BUDDHAQUOTES_TEST_TODAY_ENTID": {},
-        "BUDDHAQUOTES_TEST_LIVE": "FALSE",
+        "BUDDHA_QUOTES_TEST_TODAY_ENTID": {},
+        "BUDDHA_QUOTES_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("BUDDHAQUOTES_TEST_LIVE") == "TRUE"
+    live = env.get("BUDDHA_QUOTES_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

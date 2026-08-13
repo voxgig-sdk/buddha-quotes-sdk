@@ -15,7 +15,7 @@
 #
 # @!attribute [rw] quote
 #   @return [String]
-Random = Struct.new(
+RandomType = Struct.new(
   :author,
   :quote,
   keyword_init: true

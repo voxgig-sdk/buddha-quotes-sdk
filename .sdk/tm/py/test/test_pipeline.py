@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import BuddhaQuotesSDK
-from core.error import BuddhaQuotesError
-from core.result import BuddhaQuotesResult
-from core.response import BuddhaQuotesResponse
-from core.spec import BuddhaQuotesSpec
-from feature.base_feature import BuddhaQuotesBaseFeature
+from projectname_sdk.core.error import BuddhaQuotesError
+from projectname_sdk.core.result import BuddhaQuotesResult
+from projectname_sdk.core.response import BuddhaQuotesResponse
+from projectname_sdk.core.spec import BuddhaQuotesSpec
+from projectname_sdk.feature.base_feature import BuddhaQuotesBaseFeature
 
 
 def _client():

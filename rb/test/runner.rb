@@ -23,8 +23,8 @@ module BuddhaQuotesTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("BUDDHAQUOTES_TEST_LIVE")
-    override = getenv("BUDDHAQUOTES_TEST_OVERRIDE")
+    live = getenv("BUDDHA_QUOTES_TEST_LIVE")
+    override = getenv("BUDDHA_QUOTES_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module BuddhaQuotesTestRunner
       end
     end
 
-    explain = getenv("BUDDHAQUOTES_TEST_EXPLAIN")
-    m["BUDDHAQUOTES_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("BUDDHA_QUOTES_TEST_EXPLAIN")
+    m["BUDDHA_QUOTES_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

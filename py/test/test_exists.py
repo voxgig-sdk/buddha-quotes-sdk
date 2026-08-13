@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# BuddhaQuotes SDK exists test
 
 import pytest
 from buddhaquotes_sdk import BuddhaQuotesSDK

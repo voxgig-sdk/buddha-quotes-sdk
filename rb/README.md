@@ -34,7 +34,7 @@ client = BuddhaQuotesSDK.new
 
 ```ruby
 begin
-  # load returns the bare Random record (raises on error).
+  # load returns the ENTITY — call data_get for the Random record (raises on error).
   random = client.Random.load()
   puts random
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = BuddhaQuotesSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 random = client.Random.load()
 puts random
 ```
@@ -278,7 +279,7 @@ Create an instance: `random = client.Random`
 #### Example: Load
 
 ```ruby
-# load returns the bare Random record (raises on error).
+# load returns the ENTITY — call data_get for the Random record (raises on error).
 random = client.Random.load()
 ```
 
@@ -303,7 +304,7 @@ Create an instance: `today = client.Today`
 #### Example: Load
 
 ```ruby
-# load returns the bare Today record (raises on error).
+# load returns the ENTITY — call data_get for the Today record (raises on error).
 today = client.Today.load()
 ```
 

@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ BuddhaQuotesUtility::setRegistrar(function (BuddhaQuotesUtility $u): void {
     $u->prepare_params = [BuddhaQuotesPrepareParams::class, 'call'];
     $u->prepare_path = [BuddhaQuotesPreparePath::class, 'call'];
     $u->prepare_query = [BuddhaQuotesPrepareQuery::class, 'call'];
+    $u->graphql_body = [BuddhaQuotesGraphql::class, 'body'];
+    $u->graphql_errors = [BuddhaQuotesGraphql::class, 'errors'];
     $u->result_basic = [BuddhaQuotesResultBasic::class, 'call'];
     $u->result_body = [BuddhaQuotesResultBody::class, 'call'];
     $u->result_headers = [BuddhaQuotesResultHeaders::class, 'call'];

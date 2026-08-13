@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import BuddhaQuotesControl
-from core.error import BuddhaQuotesError
-from core.result import BuddhaQuotesResult
-from core.spec import BuddhaQuotesSpec
+from buddhaquotes_sdk.config import make_config
+from buddhaquotes_sdk.features import _make_feature
+from buddhaquotes_sdk.core.control import BuddhaQuotesControl
+from buddhaquotes_sdk.core.error import BuddhaQuotesError
+from buddhaquotes_sdk.core.result import BuddhaQuotesResult
+from buddhaquotes_sdk.core.spec import BuddhaQuotesSpec
 
 
 # True when this SDK was generated with the named feature.

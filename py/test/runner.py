@@ -4,7 +4,7 @@ from __future__ import annotations
 import os
 import json
 
-from utility.voxgig_struct import voxgig_struct as vs
+from buddhaquotes_sdk.utility.voxgig_struct import voxgig_struct as vs
 
 
 class BuddhaQuotesTestRunner:
@@ -38,8 +38,8 @@ class BuddhaQuotesTestRunner:
 
     @staticmethod
     def env_override(m):
-        live = BuddhaQuotesTestRunner.getenv("BUDDHAQUOTES_TEST_LIVE")
-        override = BuddhaQuotesTestRunner.getenv("BUDDHAQUOTES_TEST_OVERRIDE")
+        live = BuddhaQuotesTestRunner.getenv("BUDDHA_QUOTES_TEST_LIVE")
+        override = BuddhaQuotesTestRunner.getenv("BUDDHA_QUOTES_TEST_OVERRIDE")
 
         if live == "TRUE" or override == "TRUE":
             for key in list(m.keys()):
@@ -56,9 +56,9 @@ class BuddhaQuotesTestRunner:
                             pass
                     m[key] = envval
 
-        explain = BuddhaQuotesTestRunner.getenv("BUDDHAQUOTES_TEST_EXPLAIN")
+        explain = BuddhaQuotesTestRunner.getenv("BUDDHA_QUOTES_TEST_EXPLAIN")
         if explain is not None and explain != "":
-            m["BUDDHAQUOTES_TEST_EXPLAIN"] = explain
+            m["BUDDHA_QUOTES_TEST_EXPLAIN"] = explain
 
         return m
 
@@ -111,6 +111,17 @@ class BuddhaQuotesTestRunner:
         return 500
 
     @staticmethod
+    def entity_data(v):
+        """Extract the data map from an op result.
+
+        Every entity operation resolves to the ENTITY (see AGENTS.md), so a
+        flow test that wants the record takes this hop. A plain dict passes
+        through unchanged.
+        """
+        if hasattr(v, "data_get") and callable(v.data_get):
+            return v.data_get()
+        return v
+
     def entity_list_to_data(lst):
         out = []
         for item in lst:
@@ -132,6 +143,10 @@ def load_env_local():
 
 def env_override(m):
     return BuddhaQuotesTestRunner.env_override(m)
+
+
+def entity_data(v):
+    return BuddhaQuotesTestRunner.entity_data(v)
 
 
 def entity_list_to_data(lst):
