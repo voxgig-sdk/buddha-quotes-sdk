@@ -40,7 +40,7 @@ class BuddhaQuotesSDK
         $utility = new BuddhaQuotesUtility();
         $this->_utility = $utility;
 
-        $config = BuddhaQuotesConfig::make_config();
+        $config = BuddhaQuotesConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

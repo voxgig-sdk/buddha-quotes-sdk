@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://buddha-api.com/api',
+    base: "https://buddha-api.com/api",
 
     headers: {
       "content-type": "application/json"
@@ -58,18 +58,14 @@ class Config {
     "random": {
       "fields": [
         {
-          "active": true,
           "name": "author",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "quote",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         }
       ],
       "name": "random",
@@ -79,15 +75,12 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "author",
                     "orig": "author",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -106,11 +99,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {
@@ -120,18 +111,14 @@ class Config {
     "today": {
       "fields": [
         {
-          "active": true,
           "name": "author",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "quote",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         }
       ],
       "name": "today",
@@ -141,7 +128,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -153,11 +139,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

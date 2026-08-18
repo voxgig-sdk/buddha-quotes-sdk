@@ -28,7 +28,7 @@ class BuddhaQuotesSDK
     utility = BuddhaQuotesUtility.new
     @_utility = utility
 
-    config = BuddhaQuotesConfig.make_config
+    config = BuddhaQuotesConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

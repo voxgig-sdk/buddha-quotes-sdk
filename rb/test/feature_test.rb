@@ -15,7 +15,7 @@ require_relative "../BuddhaQuotes_sdk"
 module BuddhaQuotesFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = BuddhaQuotesConfig.make_config["feature"]
+    f = BuddhaQuotesConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

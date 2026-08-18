@@ -5,6 +5,29 @@ declare(strict_types=1);
 
 class BuddhaQuotesConfig
 {
+    /** @var array<string,mixed>|null */
+    private static ?array $shared_config = null;
+
+    /**
+     * Return the process-wide config, built once on first use. The SDK reads
+     * the config on every request and never writes to it, so one instance is
+     * shared by every client rather than rebuilt per client.
+     *
+     * PHP arrays are copy-on-write, so callers that do mutate the result get
+     * their own copy and cannot disturb the shared one.
+     */
+    public static function shared_config(): array
+    {
+        if (self::$shared_config === null) {
+            self::$shared_config = self::make_config();
+        }
+        return self::$shared_config;
+    }
+
+    /**
+     * Build a fresh, fully materialised config array. Every call rebuilds the
+     * whole structure, so prefer shared_config unless you need a private copy.
+     */
     public static function make_config(): array
     {
         return [
@@ -32,18 +55,14 @@ class BuddhaQuotesConfig
         'random' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'author',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'quote',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
           ],
           'name' => 'random',
@@ -53,15 +72,12 @@ class BuddhaQuotesConfig
               'name' => 'load',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'author',
                         'orig' => 'author',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -81,10 +97,8 @@ class BuddhaQuotesConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'load',
             ],
           ],
           'relations' => [
@@ -94,18 +108,14 @@ class BuddhaQuotesConfig
         'today' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'author',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'quote',
               'req' => true,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
           ],
           'name' => 'today',
@@ -115,7 +125,6 @@ class BuddhaQuotesConfig
               'name' => 'load',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
@@ -128,10 +137,8 @@ class BuddhaQuotesConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
               ],
-              'key$' => 'load',
             ],
           ],
           'relations' => [
