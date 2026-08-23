@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "BuddhaQuotes",
+            "slug": "buddha-quotes",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -52,11 +55,13 @@ def make_config():
           {
             "name": "author",
             "req": True,
+            "short": "The author of the quote",
             "type": "`$STRING`",
           },
           {
             "name": "quote",
             "req": True,
+            "short": "The text of the inspirational quote",
             "type": "`$STRING`",
           },
         ],
@@ -105,11 +110,13 @@ def make_config():
           {
             "name": "author",
             "req": True,
+            "short": "The author of the quote",
             "type": "`$STRING`",
           },
           {
             "name": "quote",
             "req": True,
+            "short": "The text of the inspirational quote",
             "type": "`$STRING`",
           },
         ],

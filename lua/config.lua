@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "BuddhaQuotes",
+      slug = "buddha-quotes",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -31,11 +34,13 @@ local function make_config()
           {
             ["name"] = "author",
             ["req"] = true,
+            ["short"] = "The author of the quote",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "quote",
             ["req"] = true,
+            ["short"] = "The text of the inspirational quote",
             ["type"] = "`$STRING`",
           },
         },
@@ -84,11 +89,13 @@ local function make_config()
           {
             ["name"] = "author",
             ["req"] = true,
+            ["short"] = "The author of the quote",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "quote",
             ["req"] = true,
+            ["short"] = "The text of the inspirational quote",
             ["type"] = "`$STRING`",
           },
         },

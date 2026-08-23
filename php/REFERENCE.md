@@ -96,8 +96,8 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | Yes |  |
-| `quote` | `string` | Yes |  |
+| `author` | `string` | Yes | The author of the quote |
+| `quote` | `string` | Yes | The text of the inspirational quote |
 
 ### Operations
 
@@ -149,8 +149,8 @@ $today = $client->Today();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | Yes |  |
-| `quote` | `string` | Yes |  |
+| `author` | `string` | Yes | The author of the quote |
+| `quote` | `string` | Yes | The text of the inspirational quote |
 
 ### Operations
 

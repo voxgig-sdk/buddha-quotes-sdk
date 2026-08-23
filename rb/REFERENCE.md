@@ -97,8 +97,8 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `String` | Yes |  |
-| `quote` | `String` | Yes |  |
+| `author` | `String` | Yes | The author of the quote |
+| `quote` | `String` | Yes | The text of the inspirational quote |
 
 ### Operations
 
@@ -150,8 +150,8 @@ today = client.Today
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `String` | Yes |  |
-| `quote` | `String` | Yes |  |
+| `author` | `String` | Yes | The author of the quote |
+| `quote` | `String` | Yes | The text of the inspirational quote |
 
 ### Operations
 

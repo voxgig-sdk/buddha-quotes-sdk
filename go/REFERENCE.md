@@ -102,8 +102,8 @@ fmt.Println(random.GetName()) // "random"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | Yes |  |
-| `quote` | `string` | Yes |  |
+| `author` | `string` | Yes | The author of the quote |
+| `quote` | `string` | Yes | The text of the inspirational quote |
 
 ### Operations
 
@@ -154,8 +154,8 @@ fmt.Println(today.GetName()) // "today"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `string` | Yes |  |
-| `quote` | `string` | Yes |  |
+| `author` | `string` | Yes | The author of the quote |
+| `quote` | `string` | Yes | The text of the inspirational quote |
 
 ### Operations
 

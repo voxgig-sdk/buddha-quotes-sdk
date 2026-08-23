@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -286,8 +286,8 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `quote` |  |
+| `author` | The author of the quote |
+| `quote` | The text of the inspirational quote |
 
 Operations: load.
 
@@ -297,8 +297,8 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `quote` |  |
+| `author` | The author of the quote |
+| `quote` | The text of the inspirational quote |
 
 Operations: load.
 
@@ -323,8 +323,8 @@ Create an instance: `const random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `quote` | `string` |  |
+| `author` | `string` | The author of the quote |
+| `quote` | `string` | The text of the inspirational quote |
 
 #### Example: Load
 
@@ -347,8 +347,8 @@ Create an instance: `const today = client.Today()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `quote` | `string` |  |
+| `author` | `string` | The author of the quote |
+| `quote` | `string` | The text of the inspirational quote |
 
 #### Example: Load
 

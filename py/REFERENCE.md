@@ -91,8 +91,8 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `str` | Yes |  |
-| `quote` | `str` | Yes |  |
+| `author` | `str` | Yes | The author of the quote |
+| `quote` | `str` | Yes | The text of the inspirational quote |
 
 ### Operations
 
@@ -143,8 +143,8 @@ today = client.Today()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author` | `str` | Yes |  |
-| `quote` | `str` | Yes |  |
+| `author` | `str` | Yes | The author of the quote |
+| `quote` | `str` | Yes | The text of the inspirational quote |
 
 ### Operations
 

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "BuddhaQuotes",
+			"slug": "buddha-quotes",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -35,11 +38,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "author",
 						"req": true,
+						"short": "The author of the quote",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "quote",
 						"req": true,
+						"short": "The text of the inspirational quote",
 						"type": "`$STRING`",
 					},
 				},
@@ -88,11 +93,13 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "author",
 						"req": true,
+						"short": "The author of the quote",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "quote",
 						"req": true,
+						"short": "The text of the inspirational quote",
 						"type": "`$STRING`",
 					},
 				},

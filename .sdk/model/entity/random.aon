@@ -8,11 +8,13 @@ main: kit: entity: random: {
     {
       name: "author"
       req: true
+      short: "The author of the quote"
       type: "`$STRING`"
     }
     {
       name: "quote"
       req: true
+      short: "The text of the inspirational quote"
       type: "`$STRING`"
     }
   ]

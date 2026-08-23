@@ -236,8 +236,8 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `quote` |  |
+| `author` | The author of the quote |
+| `quote` | The text of the inspirational quote |
 
 Operations: Load.
 
@@ -247,8 +247,8 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `quote` |  |
+| `author` | The author of the quote |
+| `quote` | The text of the inspirational quote |
 
 Operations: Load.
 
@@ -273,8 +273,8 @@ Create an instance: `random = client.Random`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `String` |  |
-| `quote` | `String` |  |
+| `author` | `String` | The author of the quote |
+| `quote` | `String` | The text of the inspirational quote |
 
 #### Example: Load
 
@@ -298,8 +298,8 @@ Create an instance: `today = client.Today`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `String` |  |
-| `quote` | `String` |  |
+| `author` | `String` | The author of the quote |
+| `quote` | `String` | The text of the inspirational quote |
 
 #### Example: Load
 

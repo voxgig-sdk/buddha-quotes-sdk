@@ -246,8 +246,8 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `quote` |  |
+| `author` | The author of the quote |
+| `quote` | The text of the inspirational quote |
 
 Operations: Load.
 
@@ -257,8 +257,8 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `author` |  |
-| `quote` |  |
+| `author` | The author of the quote |
+| `quote` | The text of the inspirational quote |
 
 Operations: Load.
 
@@ -283,8 +283,8 @@ Create an instance: `$random = $client->Random();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `quote` | `string` |  |
+| `author` | `string` | The author of the quote |
+| `quote` | `string` | The text of the inspirational quote |
 
 #### Example: Load
 
@@ -308,8 +308,8 @@ Create an instance: `$today = $client->Today();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author` | `string` |  |
-| `quote` | `string` |  |
+| `author` | `string` | The author of the quote |
+| `quote` | `string` | The text of the inspirational quote |
 
 #### Example: Load
 

@@ -33,6 +33,9 @@ class BuddhaQuotesConfig
         return [
             "main" => [
                 "name" => "BuddhaQuotes",
+                "slug" => "buddha-quotes",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -57,11 +60,13 @@ class BuddhaQuotesConfig
             [
               'name' => 'author',
               'req' => true,
+              'short' => 'The author of the quote',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'quote',
               'req' => true,
+              'short' => 'The text of the inspirational quote',
               'type' => '`$STRING`',
             ],
           ],
@@ -110,11 +115,13 @@ class BuddhaQuotesConfig
             [
               'name' => 'author',
               'req' => true,
+              'short' => 'The author of the quote',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'quote',
               'req' => true,
+              'short' => 'The text of the inspirational quote',
               'type' => '`$STRING`',
             ],
           ],
