@@ -28,6 +28,7 @@ module BuddhaQuotesConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
