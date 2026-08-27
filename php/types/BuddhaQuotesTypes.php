@@ -23,7 +23,6 @@ class Random
 class RandomLoadMatch
 {
     public ?string $author = null;
-    public ?string $quote = null;
 }
 
 /** Today entity data model. */

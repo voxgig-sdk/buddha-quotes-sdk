@@ -12,7 +12,6 @@
 
 ---@class RandomLoadMatch
 ---@field author? string
----@field quote? string
 
 ---@class Today
 ---@field author string

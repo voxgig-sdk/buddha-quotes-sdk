@@ -12,7 +12,6 @@ export interface Random {
 
 export interface RandomLoadMatch {
   author?: string
-  quote?: string
 }
 
 export interface Today {

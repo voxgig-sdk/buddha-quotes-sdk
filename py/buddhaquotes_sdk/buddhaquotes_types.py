@@ -23,7 +23,6 @@ class Random(TypedDict):
 
 class RandomLoadMatch(TypedDict, total=False):
     author: str
-    quote: str
 
 
 class Today(TypedDict):

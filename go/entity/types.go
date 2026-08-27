@@ -21,7 +21,6 @@ type Random struct {
 // RandomLoadMatch is the typed request payload for Random.LoadTyped.
 type RandomLoadMatch struct {
 	Author *string `json:"author,omitempty"`
-	Quote *string `json:"quote,omitempty"`
 }
 
 // Today is the typed data model for the today entity.
