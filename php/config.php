@@ -91,8 +91,10 @@ class BuddhaQuotesConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
-                  'parts' => [
-                    'random',
+                  'segments' => [
+                    [
+                      'lit' => 'random',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -102,6 +104,9 @@ class BuddhaQuotesConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'random',
                   ],
                 ],
               ],
@@ -137,13 +142,18 @@ class BuddhaQuotesConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/today',
-                  'parts' => [
-                    'today',
+                  'segments' => [
+                    [
+                      'lit' => 'today',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'today',
                   ],
                 ],
               ],

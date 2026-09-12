@@ -77,8 +77,10 @@ module BuddhaQuotesConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
-                  "parts" => [
-                    "random",
+                  "segments" => [
+                    {
+                      "lit" => "random",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -89,6 +91,9 @@ module BuddhaQuotesConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "random",
+                  ],
                 },
               ],
             },
@@ -123,14 +128,19 @@ module BuddhaQuotesConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/today",
-                  "parts" => [
-                    "today",
+                  "segments" => [
+                    {
+                      "lit" => "today",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "today",
+                  ],
                 },
               ],
             },

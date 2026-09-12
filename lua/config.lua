@@ -65,8 +65,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/random",
-                ["parts"] = {
-                  "random",
+                ["segments"] = {
+                  {
+                    ["lit"] = "random",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -76,6 +78,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "random",
                 },
               },
             },
@@ -111,13 +116,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/today",
-                ["parts"] = {
-                  "today",
+                ["segments"] = {
+                  {
+                    ["lit"] = "today",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "today",
                 },
               },
             },
