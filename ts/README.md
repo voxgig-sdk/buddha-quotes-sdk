@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { BuddhaQuotesSDK } from '@voxgig-sdk/buddha-quotes'
+import { BuddhaQuotesSDK } from '@voxgig-sdk/buddha-quotes-sdk'
 
 const client = new BuddhaQuotesSDK()
 ```
@@ -439,7 +439,7 @@ buddha-quotes/
 Import the SDK from the package root:
 
 ```ts
-import { BuddhaQuotesSDK } from '@voxgig-sdk/buddha-quotes'
+import { BuddhaQuotesSDK } from '@voxgig-sdk/buddha-quotes-sdk'
 ```
 
 ### Entity state

@@ -105,7 +105,7 @@ local result, err = client:Random():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
+| TypeScript | `@voxgig-sdk/buddha-quotes-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
 | Python | `voxgig-sdk-buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
 | PHP | `voxgig-sdk/buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/buddha-quotes-sdk/go` | `go get github.com/voxgig-sdk/buddha-quotes-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Random():load()
 ### TypeScript
 
 ```ts
-import { BuddhaQuotesSDK } from '@voxgig-sdk/buddha-quotes'
+import { BuddhaQuotesSDK } from '@voxgig-sdk/buddha-quotes-sdk'
 
 const client = new BuddhaQuotesSDK()
 
