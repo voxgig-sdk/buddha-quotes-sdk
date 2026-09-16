@@ -1,12 +1,18 @@
 # BuddhaQuotes SDK feature factory
 
 from buddhaquotes_sdk.feature.base_feature import BuddhaQuotesBaseFeature
+from buddhaquotes_sdk.feature.ratelimit_feature import BuddhaQuotesRatelimitFeature
+from buddhaquotes_sdk.feature.retry_feature import BuddhaQuotesRetryFeature
 from buddhaquotes_sdk.feature.test_feature import BuddhaQuotesTestFeature
+from buddhaquotes_sdk.feature.timeout_feature import BuddhaQuotesTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: BuddhaQuotesBaseFeature(),
+    "ratelimit": lambda: BuddhaQuotesRatelimitFeature(),
+    "retry": lambda: BuddhaQuotesRetryFeature(),
     "test": lambda: BuddhaQuotesTestFeature(),
+    "timeout": lambda: BuddhaQuotesTimeoutFeature(),
 }
 
 
