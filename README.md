@@ -105,12 +105,12 @@ local result, err = client:Random():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/buddha-quotes-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
-| Python | `voxgig-sdk-buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
-| PHP | `voxgig-sdk/buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
+| TypeScript | `@voxgig-sdk/buddha-quotes-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/tags) |
+| Python | `voxgig-sdk-buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/tags) |
+| PHP | `voxgig-sdk/buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/buddha-quotes-sdk/go` | `go get github.com/voxgig-sdk/buddha-quotes-sdk/go@latest` |
-| Ruby | `voxgig-sdk-buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
-| Lua | `voxgig-sdk-buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/releases) |
+| Ruby | `voxgig-sdk-buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/tags) |
+| Lua | `voxgig-sdk-buddha-quotes` | publish pending — [install from git tag](https://github.com/voxgig-sdk/buddha-quotes-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/buddha-quotes-sdk/go-cli` | `go install github.com/voxgig-sdk/buddha-quotes-sdk/go-cli/cmd/buddha-quotes@latest` |
 | Go MCP server | `github.com/voxgig-sdk/buddha-quotes-sdk/go-mcp` | `go get github.com/voxgig-sdk/buddha-quotes-sdk/go-mcp@latest` |
 
