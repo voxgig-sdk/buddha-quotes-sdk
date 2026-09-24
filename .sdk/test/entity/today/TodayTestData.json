@@ -29,72 +29,8 @@
   "requests": {
     "GET /today": {
       "provenance": "operation-contract",
-      "contract": {
-        "operationId": "getTodayQuote",
-        "parameters": [],
-        "protocol": "http",
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "examples": {
-                  "today": {
-                    "value": {
-                      "author": "Buddha",
-                      "quote": "One moment can change a day, one day can change a life, and one life can change the world."
-                    }
-                  }
-                },
-                "schema": {
-                  "properties": {
-                    "author": {
-                      "description": "The author of the quote",
-                      "enum": [
-                        "Buddha",
-                        "Dalai Lama",
-                        "Dogen",
-                        "Thich Nhat Hanh"
-                      ],
-                      "type": "string"
-                    },
-                    "quote": {
-                      "description": "The text of the inspirational quote",
-                      "type": "string"
-                    }
-                  },
-                  "required": [
-                    "quote",
-                    "author"
-                  ],
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Successful response with today's quote"
-          },
-          "500": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "error": {
-                      "description": "Error message",
-                      "type": "string"
-                    },
-                    "message": {
-                      "description": "Detailed error description",
-                      "type": "string"
-                    }
-                  },
-                  "type": "object"
-                }
-              }
-            },
-            "description": "Internal server error"
-          }
-        },
-        "securitySource": "unspecified"
-      }
+      "version": 2,
+      "source": "openapi3"
     }
   }
 }

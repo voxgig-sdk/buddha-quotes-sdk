@@ -100,15 +100,17 @@ module BuddhaQuotesConfig
           "fields" => [
             {
               "name" => "author",
+              "title" => "Author",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The author of the quote",
-              "type" => "`$STRING`",
             },
             {
               "name" => "quote",
+              "title" => "Quote",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The text of the inspirational quote",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "random",
@@ -118,16 +120,6 @@ module BuddhaQuotesConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "kind" => "query",
-                        "name" => "author",
-                        "orig" => "author",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
@@ -136,18 +128,29 @@ module BuddhaQuotesConfig
                       "lit" => "random",
                     },
                   ],
+                  "parts" => [
+                    "random",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "author",
+                        "orig" => "author",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "author",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "random",
-                  ],
                 },
               ],
             },
@@ -160,15 +163,17 @@ module BuddhaQuotesConfig
           "fields" => [
             {
               "name" => "author",
+              "title" => "Author",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The author of the quote",
-              "type" => "`$STRING`",
             },
             {
               "name" => "quote",
+              "title" => "Quote",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "The text of the inspirational quote",
-              "type" => "`$STRING`",
             },
           ],
           "name" => "today",
@@ -178,7 +183,6 @@ module BuddhaQuotesConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/today",
@@ -187,14 +191,16 @@ module BuddhaQuotesConfig
                       "lit" => "today",
                     },
                   ],
-                  "select" => {},
+                  "parts" => [
+                    "today",
+                  ],
+                  "rename" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "parts" => [
-                    "today",
-                  ],
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },

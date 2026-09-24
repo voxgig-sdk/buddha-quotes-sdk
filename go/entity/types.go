@@ -1,7 +1,7 @@
 // Typed models for the BuddhaQuotes SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,8 +14,6 @@ import (
 
 // Random is the typed data model for the random entity.
 type Random struct {
-	Author string `json:"author"`
-	Quote string `json:"quote"`
 }
 
 // RandomLoadMatch is the typed request payload for Random.LoadTyped.
@@ -25,8 +23,6 @@ type RandomLoadMatch struct {
 
 // Today is the typed data model for the today entity.
 type Today struct {
-	Author string `json:"author"`
-	Quote string `json:"quote"`
 }
 
 // TodayLoadMatch is the typed request payload for Today.LoadTyped.

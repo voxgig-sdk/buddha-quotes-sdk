@@ -117,15 +117,17 @@ def make_config():
         "fields": [
           {
             "name": "author",
+            "title": "Author",
+            "type": "`$STRING`",
             "req": True,
             "short": "The author of the quote",
-            "type": "`$STRING`",
           },
           {
             "name": "quote",
+            "title": "Quote",
+            "type": "`$STRING`",
             "req": True,
             "short": "The text of the inspirational quote",
-            "type": "`$STRING`",
           },
         ],
         "name": "random",
@@ -135,16 +137,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "kind": "query",
-                      "name": "author",
-                      "orig": "author",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random",
@@ -153,18 +145,29 @@ def make_config():
                     "lit": "random",
                   },
                 ],
+                "parts": [
+                  "random",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "author",
+                      "orig": "author",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "author",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "random",
-                ],
               },
             ],
           },
@@ -177,15 +180,17 @@ def make_config():
         "fields": [
           {
             "name": "author",
+            "title": "Author",
+            "type": "`$STRING`",
             "req": True,
             "short": "The author of the quote",
-            "type": "`$STRING`",
           },
           {
             "name": "quote",
+            "title": "Quote",
+            "type": "`$STRING`",
             "req": True,
             "short": "The text of the inspirational quote",
-            "type": "`$STRING`",
           },
         ],
         "name": "today",
@@ -195,7 +200,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/today",
@@ -204,14 +208,16 @@ def make_config():
                     "lit": "today",
                   },
                 ],
-                "select": {},
+                "parts": [
+                  "today",
+                ],
+                "rename": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [
-                  "today",
-                ],
+                "args": {},
+                "select": {},
               },
             ],
           },

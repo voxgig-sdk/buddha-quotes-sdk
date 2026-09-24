@@ -92,15 +92,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
+						"title": "Author",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The author of the quote",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "quote",
+						"title": "Quote",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The text of the inspirational quote",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "random",
@@ -110,16 +112,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "author",
-											"orig": "author",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/random",
@@ -128,17 +120,28 @@ func MakeConfig() map[string]any {
 										"lit": "random",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"author",
-									},
+								"parts": []any{
+									"random",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"random",
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "author",
+											"orig": "author",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"author",
+									},
 								},
 							},
 						},
@@ -152,15 +155,17 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "author",
+						"title": "Author",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The author of the quote",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "quote",
+						"title": "Quote",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "The text of the inspirational quote",
-						"type": "`$STRING`",
 					},
 				},
 				"name": "today",
@@ -170,7 +175,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/today",
@@ -179,14 +183,16 @@ func MakeConfig() map[string]any {
 										"lit": "today",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"today",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"today",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

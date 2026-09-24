@@ -1,0 +1,53 @@
+# Entity: today
+
+main: kit: entity: today: {
+
+  alias: field: {}
+
+  fields: {
+    author: {
+      h: "Author"
+      n: "author"
+      r: true
+      sh: "The author of the quote"
+      t: "`$STRING`"
+    }
+    quote: {
+      h: "Quote"
+      n: "quote"
+      r: true
+      sh: "The text of the inspirational quote"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "today"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /today"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/today"
+          s: [
+            {
+              lit: "today"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
