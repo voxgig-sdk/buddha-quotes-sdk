@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 BuddhaQuotesUtility::setRegistrar(function (BuddhaQuotesUtility $u): void {
     $u->clean = [BuddhaQuotesClean::class, 'call'];
+    $u->clean_add = [BuddhaQuotesClean::class, 'add'];
+    $u->clean_explain = [BuddhaQuotesDone::class, 'clean_explain'];
     $u->done = [BuddhaQuotesDone::class, 'call'];
     $u->make_error = [BuddhaQuotesMakeError::class, 'call'];
     $u->feature_add = [BuddhaQuotesFeatureAdd::class, 'call'];

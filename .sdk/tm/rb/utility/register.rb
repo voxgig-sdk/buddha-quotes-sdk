@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 BuddhaQuotesUtility.registrar = ->(u) {
   u.clean = BuddhaQuotesUtilities::Clean
+  u.clean_add = BuddhaQuotesUtilities::CleanAdd
+  u.clean_explain = BuddhaQuotesUtilities::CleanExplain
   u.done = BuddhaQuotesUtilities::Done
   u.make_error = BuddhaQuotesUtilities::MakeError
   u.feature_add = BuddhaQuotesUtilities::FeatureAdd
