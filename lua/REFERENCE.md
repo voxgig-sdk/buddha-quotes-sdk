@@ -101,7 +101,7 @@ local random = client:Random(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:Random():load()
@@ -154,7 +154,7 @@ local today = client:Today(nil)
 
 #### `load(reqmatch, ctrl) -> any, err`
 
-Load a single entity matching the given criteria.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, or `nil` and an error on failure.
 
 ```lua
 local result, err = client:Today():load()
@@ -347,6 +347,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

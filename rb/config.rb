@@ -79,6 +79,7 @@ module BuddhaQuotesConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -143,13 +144,14 @@ module BuddhaQuotesConfig
                         "orig" => "author",
                         "type" => "`$STRING`",
                         "kind" => "query",
+                        "field" => true,
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "author",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -201,6 +203,10 @@ module BuddhaQuotesConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },

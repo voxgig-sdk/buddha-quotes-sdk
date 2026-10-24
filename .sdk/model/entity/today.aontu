@@ -34,6 +34,10 @@ main: kit: entity: today: {
           }
           m: "GET"
           o: "/today"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "today"

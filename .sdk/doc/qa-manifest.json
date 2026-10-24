@@ -3,5 +3,15 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Production server",
+      "Successful response with a random quote",
+      "Successful response with today&#39;s quote",
+      "The author of the quote",
+      "The text of the inspirational quote",
+      "This API provides access to a collection of inspirational quotes from Buddhist figures including Buddha, Dogen, and Thich Nhat Hanh. Users can retrieve random quotes as well as specific quotes for today, making it a resource for daily wisdom and reflection."
+    ]
+  }
 }

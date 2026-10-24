@@ -19,8 +19,18 @@ const PLAN: any[] = [
       "author": "v1"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [
       "author"
+    ],
+    "queryArgs": [
+      {
+        "name": "author",
+        "wire": "author"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -39,7 +49,12 @@ const PLAN: any[] = [
     "args": [],
     "select": {},
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [],
+    "queryArgs": [],
     "auth": null,
     "status": 200,
     "sample": {

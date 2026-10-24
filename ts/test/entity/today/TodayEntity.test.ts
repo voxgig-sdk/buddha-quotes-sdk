@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { BuddhaQuotesSDK, BaseFeature, stdutil } from '../../..'
+import { BuddhaQuotesSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('TodayEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = BuddhaQuotesSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Today().load({"author":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.BUDDHA_QUOTES_TEST_LIVE
@@ -51,7 +63,7 @@ describe('TodayEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"author":{"a":true,"h":"Author","n":"author","r":true,"sh":"The author of the quote","t":"`$STRING`","key$":"author","index$":0},"quote":{"a":true,"h":"Quote","n":"quote","r":true,"sh":"The text of the inspirational quote","t":"`$STRING`","key$":"quote","index$":1}},"name":"today","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /today","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/today","q":{},"r":{},"s":[{"lit":"today"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"today","name__orig":"today","Name":"Today","name_":"today","name-":"today","NAME":"TODAY","index$":1}, {"active":true,"entity":"today","key$":"BasicTodayFlow","kind":"basic","name":"BasicTodayFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"today_ref01","srcdatavar":"today_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-today_ref01"}}],"index$":0}]}, 'Today', {"GET /today":{"protocol":"http","parameters":[]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"author":{"a":true,"h":"Author","n":"author","r":true,"sh":"The author of the quote","t":"`$STRING`","key$":"author","index$":0},"quote":{"a":true,"h":"Quote","n":"quote","r":true,"sh":"The text of the inspirational quote","t":"`$STRING`","key$":"quote","index$":1}},"name":"today","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /today","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/today","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"today"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"today","name__orig":"today","Name":"Today","name_":"today","name-":"today","NAME":"TODAY","index$":1}, {"active":true,"entity":"today","key$":"BasicTodayFlow","kind":"basic","name":"BasicTodayFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"today_ref01","srcdatavar":"today_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-today_ref01"}}],"index$":0}]}, 'Today', {"GET /today":{"protocol":"http","parameters":[]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +84,12 @@ describe('TodayEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

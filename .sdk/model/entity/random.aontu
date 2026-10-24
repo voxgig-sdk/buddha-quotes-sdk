@@ -45,10 +45,9 @@ main: kit: entity: random: {
           }
           m: "GET"
           o: "/random"
-          q: {
-            exist: [
-              "author"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
